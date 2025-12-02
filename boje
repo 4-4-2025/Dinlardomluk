@@ -1,3 +1,51 @@
 from tkinter import *
 
 t = Tk()
+
+def show_value(val):
+    print("Trenutna vrijednost: ", val)
+
+f = Frame(t)
+f.grid(padx = 100, pady = 50)
+
+#Naslov
+naslov = Label(f, text = 'Mješalica', font = 300)
+naslov.grid(row = 0, column = 1, columnspan = 2)
+
+#Stavljanje R G B teksta
+r = Label(f, text = 'R', fg = 'Red')
+r.grid(row = 1, column = 0, padx = 5, pady = 5)
+g = Label(f, text = 'G', fg = 'Green')
+g.grid(row = 2, column = 0, padx = 5, pady = 5)
+b = Label(f, text = 'B', fg = 'Blue')
+b.grid(row = 3, column = 0, padx = 5, pady = 5)
+
+#Stavljanje slidera
+slider1 = Scale(f,
+                  from_ = 0, to = 255,
+                  orient = "horizontal",
+                  length = 300,
+                  #command = show_value
+                )
+slider1.grid(row = 1, column = 1, padx = 5, pady = 5)
+slider2 = Scale(f,
+                  from_ = 0, to = 255,
+                  orient = "horizontal",
+                  length = 300,
+                  #command = show_value
+                )
+slider2.grid(row = 2, column = 1, padx = 5, pady = 5)
+slider3 = Scale(f,
+                  from_ = 0, to = 255,
+                  orient = "horizontal",
+                  length = 300,
+                  #command = show_value
+                )
+slider3.grid(row = 3, column = 1, padx = 5, pady = 5)
+
+#slider1.pack(padx = 5, pady = 5)
+#slider2.pack(padx = 5, pady = 5)
+#slider3.pack(padx = 5, pady = 5)
+
+t.mainloop()
+
